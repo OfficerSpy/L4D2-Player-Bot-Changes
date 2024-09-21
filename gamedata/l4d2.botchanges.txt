@@ -1,0 +1,24 @@
+"Games"
+{
+	"left4dead2"
+	{
+		"Offsets"
+		{
+			"CBasePlayer::IsBot"
+			{
+				"windows"	"477"
+				"linux"		"478"
+			}
+		}
+		"Functions"
+		{
+			"CBasePlayer::IsBot"
+			{
+				"offset"	"CBasePlayer::IsBot"
+				"hooktype"	"entity"
+				"return"	"bool"
+				"this"		"entity"
+			}
+		}
+	}
+}
