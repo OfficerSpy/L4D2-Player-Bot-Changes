@@ -145,7 +145,7 @@ public Action Player_OnTakeDamageAlive(int victim, int &attacker, int &inflictor
 				/* SDKHook_OnTakeDamageAlivePost will not work here because m_reviveOwner becomes NULL
 				when CTerrorPlayer::StopBeingRevived gets called in CTerrorPlayer::OnTakeDamage_Alive
 				So we'll just reset our variable by a frame later */
-				RequestFrame(Frame_Player_OnTakeDamageAlive, reviver);
+				RequestFrame(Frame_ResetReviveHitState, reviver);
 			}
 		}
 	}
@@ -252,7 +252,7 @@ public void Witch_OnTakeDamagePost(int victim, int attacker, int inflictor, floa
 	}
 }
 
-public void Frame_Player_OnTakeDamageAlive(int client)
+public void Frame_ResetReviveHitState(int client)
 {
 	g_bHitDuringRevive[client] = false;
 }
